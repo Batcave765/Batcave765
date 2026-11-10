@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-10T10:37:25.445904Z",
-  "title": "Design System: Batcave765",
+  "generatedAt": "2026-11-10T10:54:42.216Z",
+  "title": "Design System: Batcave765 — Make it fast",
   "extensions": {
     "colorMeta": {
       "charcoal": {
@@ -35,47 +35,47 @@
     "motion": [],
     "breakpoints": [
       {
-        "name": "mobile-hero-max",
+        "name": "mobile-poster-max",
         "value": "600px"
       }
     ]
   },
   "components": [
     {
-      "name": "Ascending chevrons",
+      "name": "Profile poster",
       "kind": "custom",
-      "refersTo": "signature",
-      "description": "The three actual signature paths extracted from assets/footer.svg; also repeated in both hero assets. This preview isolates the geometry without duplicating outlined lettering.",
-      "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"647 29 52 50\" width=\"104\" height=\"100\" role=\"img\" aria-labelledby=\"ds-signature-title\"><title id=\"ds-signature-title\">Three ascending chevrons</title><path d=\"M 655.00 71.00 L 671.32 54.00 L 655.00 37.00\" fill=\"none\" stroke=\"#D4FF63\" stroke-width=\"4.08\" stroke-linejoin=\"miter\"/><path d=\"M 664.52 71.00 L 680.84 54.00 L 664.52 37.00\" fill=\"none\" stroke=\"#D4FF63\" stroke-width=\"4.08\" stroke-linejoin=\"miter\"/><path d=\"M 674.04 71.00 L 690.36 54.00 L 674.04 37.00\" fill=\"none\" stroke=\"#D4FF63\" stroke-width=\"4.08\" stroke-linejoin=\"miter\"/></svg>",
-      "css": ""
+      "refersTo": "profile",
+      "description": "One static SVG at assets/profile.svg; mobile alternative assets/profile-mobile.svg. Native project/contact links below."
+    },
+    {
+      "name": "Diagonal ribbon",
+      "kind": "custom",
+      "refersTo": "ribbon",
+      "description": "Ivory MAKE IT FAST ribbon, -4 degrees desktop and -5 degrees mobile, with ascending chevrons."
     }
   ],
   "narrative": {
-    "northStar": "After-hours engineering editorial",
-    "overview": "Oversized geometric lettering, warm paper, dark ink, and an electric accent give the profile an independent editorial voice. Precise repeated geometry connects the artwork to engineering without obscuring the work itself.\n\nThe audience is engineering recruiters and hiring managers. Authored SVG artwork establishes identity; native GitHub Markdown carries selectable project details, experience, and contact links.",
+    "northStar": "Make it fast",
+    "overview": "Single-page engineering poster. The user explicitly chose a compact image-led README. Oversized split name, diagonal ribbon, engineering proof, two projects, compressed toolkit and four native links.",
     "keyCharacteristics": [
-      "Bold outlined lettering and generous graphic space.",
-      "A compact palette with sharply contrasted project treatments.",
-      "Static, repeatable geometry paired with readable engineering substance."
+      "One responsive content image",
+      "Oversized type colliding with a diagonal ribbon",
+      "Charcoal, ivory and electric lime"
     ],
     "rules": [
       {
-        "name": "The Geometry Rule",
-        "body": "The waveform and loops are decorative signatures, not measured data or product screenshots.",
-        "section": "shapes"
+        "name": "One-page rule",
+        "body": "Keep the README to one compact composition plus native project/contact links.",
+        "section": "layout"
       }
     ],
     "dos": [
-      "Do preserve the palette, semibold outlined lettering, and repeated geometry when extending the artwork.",
-      "Do keep substantive information and navigation in native, selectable README text.",
-      "Do maintain alternative text and SVG titles, and check both hero compositions when editing identity artwork.",
-      "Do regenerate authored SVGs through `scripts/build_artwork.py` so geometry and font treatment stay consistent."
+      "Preserve comprehensive factual alt text and native actions.",
+      "Check both responsive poster assets."
     ],
     "donts": [
-      "Don't introduce custom page CSS or scripted interactions that GitHub cannot render.",
-      "Don't treat decorative geometry as evidence, analytics, or a product screenshot.",
-      "Don't replace native text with image-only claims or links.",
-      "Don't substitute generated raster artwork for the authored SVG system."
+      "Do not restore long resume sections, skills tables, or extra banners.",
+      "Do not add fake interactive controls inside the image."
     ]
   }
 }

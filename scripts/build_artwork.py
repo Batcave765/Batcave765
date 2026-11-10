@@ -1,11 +1,10 @@
-"""Build portable profile artwork. Usage: python scripts/build_artwork.py FONT.ttf
+"""Build the one-page profile. Usage: python scripts/build_artwork.py FONT.ttf
 
-Requires fonttools. All lettering is outlined: GitHub needs no fonts or scripts.
-Font: Space Grotesk, SIL Open Font License (see assets/FONT-LICENSE.txt).
+Requires fonttools. Space Grotesk is outlined for portable GitHub rendering.
+License: assets/FONT-LICENSE.txt. No runtime fonts or external image services.
 """
 from pathlib import Path
 from html import escape
-import math
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,9 +22,8 @@ units = font['head'].unitsPerEm
 INK, PAPER, LIME, MUTED = '#151916', '#F3F1E8', '#D4FF63', '#B8C1B5'
 
 
-def text(value, x, y, size, color=INK, spacing=0):
-    scale = size / units
-    paths, cursor = [], 0
+def text(value, x, y, size, color=PAPER, spacing=0):
+    scale, cursor, paths = size / units, 0, []
     for char in value:
         name = cmap[ord(char)]
         pen = SVGPathPen(glyphs)
@@ -36,58 +34,64 @@ def text(value, x, y, size, color=INK, spacing=0):
     return f'<g fill="{color}" transform="translate({x} {y}) scale({scale:.6f} {-scale:.6f})">' + ''.join(paths) + '</g>'
 
 
-def svg(name, width, height, title, body, bg):
-    content = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title">
-<title id="title">{escape(title)}</title>
-<rect width="{width}" height="{height}" fill="{bg}"/>
-{body}
-</svg>\n'''
-    (ROOT / 'assets' / name).write_text(content, encoding='utf-8')
+def chevrons(x, y, size, color):
+    return ''.join(f'<path d="M{x+i*size*.3} {y}l{size*.5} {size*.5}l{-size*.5} {size*.5}" fill="none" stroke="{color}" stroke-width="{size*.11}"/>' for i in range(3))
 
 
-def mark(x, y, size, color=LIME):
-    # Three ascending chevrons: one repeated, precisely constructed signature.
-    return ''.join(f'<path d="M {x+i*size*.28:.2f} {y+size:.2f} L {x+i*size*.28+size*.48:.2f} {y+size*.5:.2f} L {x+i*size*.28:.2f} {y:.2f}" fill="none" stroke="{color}" stroke-width="{size*.12}" stroke-linejoin="miter"/>' for i in range(3))
+def ribbon(y, width, height, angle, label, size):
+    return (f'<g transform="translate({width/2} {y}) rotate({angle})">'
+            f'<rect x="{-width*.6}" y="{-height/2}" width="{width*1.2}" height="{height}" fill="{PAPER}"/>'
+            + text(label, -width*.45, size*.32, size, INK, -size*.025)
+            + chevrons(width*.32, -height*.28, height*.56, INK) + '</g>')
 
 
-(ROOT / 'assets').mkdir(exist_ok=True)
-svg('hero.svg', 1200, 530, 'Sriram M — software engineer. Fast systems. Thoughtful software.',
-    text('SRIRAM M.', 48, 190, 152, PAPER, -3)
-    + text('Software Engineer', 54, 251, 27, MUTED)
-    + '<path d="M54 287H1146" stroke="#465044"/>'
-    + text('Fast systems.', 49, 385, 88, LIME, -2)
-    + text('Thoughtful software.', 49, 469, 74, PAPER, -2)
-    + mark(974, 335, 110), INK)
+def save(name, w, h, body):
+    title = 'Sriram M. Make it fast. Performance engineering, full-stack and local-first apps.'
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title"><title id="title">{escape(title)}</title><rect width="{w}" height="{h}" fill="{INK}"/>{body}</svg>\n'
+    (ROOT / 'assets' / name).write_text(svg, encoding='utf-8')
 
-svg('hero-mobile.svg', 600, 570, 'Sriram M — software engineer. Fast systems. Thoughtful software.',
-    text('SRIRAM', 27, 133, 115, PAPER, -3)
-    + text('M.', 29, 242, 115, PAPER, -3)
-    + mark(405, 166, 83)
-    + text('Software Engineer', 32, 296, 28, MUTED)
-    + '<path d="M32 332H568" stroke="#465044"/>'
-    + text('Fast systems.', 28, 402, 65, LIME, -2)
-    + text('Thoughtful', 28, 472, 65, PAPER, -2)
-    + text('software.', 28, 538, 65, PAPER, -2), INK)
 
-# Deterministic waveform geometry is an abstract motif, not measured project data.
-wave = ''
-for i in range(45):
-    h = 16 + 106 * abs(math.sin(i * .29) * math.cos(i * .13))
-    wave += f'<rect x="{723+i*9}" y="{125-h/2:.2f}" width="4" height="{h:.2f}" rx="2" fill="{INK}"/>'
-svg('koda.svg', 1200, 250, 'Koda — audio in, insight out.',
-    text('Koda', 44, 126, 99, INK, -3)
-    + text('Audio in. Insight out.', 49, 181, 29, INK)
-    + wave, LIME)
+desktop = '<rect width="555" height="422" fill="#D4FF63"/>'
+desktop += text('SRI', 35, 174, 205, INK, -6)
+desktop += text('RAM.', 35, 349, 205, INK, -6)
+desktop += text('Software engineer.', 610, 88, 40)
+desktop += text('Chennai, India / Batcave765', 613, 129, 23, MUTED)
+desktop += text('Performance + automation', 613, 208, 30)
+desktop += text('Cognizant / Macy\'s supply chain', 613, 246, 23, MUTED)
+desktop += text('3,000 TPS workloads.', 613, 303, 27, LIME)
+desktop += text('3–4h saved per release.', 613, 342, 27, LIME)
+desktop += ribbon(423, 1200, 112, -4, 'MAKE IT FAST.', 88)
+desktop += text('Koda', 49, 561, 52, LIME, -1)
+desktop += text('Audio → BPM + musical key.', 51, 601, 25)
+desktop += text('Go / Next.js / FFmpeg', 51, 635, 22, MUTED)
+desktop += '<path d="M580 518V651" stroke="#465044"/>'
+desktop += text('Recur', 625, 561, 52, LIME, -1)
+desktop += text('Subscriptions. Local-first. Instant.', 627, 601, 25)
+desktop += text('React Native / Expo / MMKV', 627, 635, 22, MUTED)
+desktop += '<path d="M50 682H1150" stroke="#465044"/>'
+desktop += text('TypeScript · Go · Python · Java · SQL · React · Next.js · React Native · Expo', 51, 724, 23)
+desktop += text('Tailwind · MMKV · Zod · Spring Boot · SpacetimeDB · Drizzle · MySQL · MongoDB', 51, 760, 23)
+desktop += text('k6 · GCP · Grafana · Dynatrace · GitLab CI/CD · Docker · Bun · Git · FFmpeg', 51, 796, 23, MUTED)
+save('profile.svg', 1200, 834, desktop)
 
-loops = ''.join(f'<rect x="{834+i*63}" y="{45+i*11}" width="150" height="150" rx="75" fill="none" stroke="{INK}" stroke-width="9"/>' for i in range(3))
-svg('recur.svg', 1200, 250, 'Recur — your subscriptions, closer to home.',
-    '<path d="M740 0H1200V250H740Z" fill="#D4FF63"/>'
-    + text('Recur', 44, 126, 99, INK, -3)
-    + text('Your subscriptions. Closer to home.', 49, 181, 26, INK)
-    + loops, PAPER)
-
-svg('footer.svg', 1200, 110, 'Batcave765 — built with intent.',
-    text('BATCAVE765', 40, 68, 25, PAPER, 1)
-    + text('Built with intent.', 839, 68, 27, LIME)
-    + mark(655, 37, 34), INK)
-print('Built five outlined SVG assets in assets/.')
+mobile = '<rect width="600" height="219" fill="#D4FF63"/>'
+mobile += text('SRIRAM M.', 26, 107, 100, INK, -3)
+mobile += text('Software engineer / Chennai', 30, 160, 29, INK)
+mobile += ribbon(237, 600, 82, -5, 'MAKE IT FAST.', 54)
+mobile += text('Performance + automation', 30, 344, 32)
+mobile += text('Cognizant / Macy\'s supply chain', 31, 386, 26, MUTED)
+mobile += text('3,000 TPS workloads.', 31, 438, 28, LIME)
+mobile += text('3–4h saved per release.', 31, 478, 28, LIME)
+mobile += '<path d="M30 512H570" stroke="#465044"/>'
+mobile += text('Koda', 28, 574, 48, LIME)
+mobile += text('Audio → BPM + key. Go / Next.js.', 31, 615, 27)
+mobile += text('Recur', 28, 692, 48, LIME)
+mobile += text('Local-first subscriptions.', 31, 733, 27)
+mobile += text('React Native / Expo / MMKV', 31, 771, 26, MUTED)
+mobile += '<path d="M30 809H570" stroke="#465044"/>'
+mobile += text('TypeScript · Go · Python · Java · SQL', 31, 851, 25)
+mobile += text('React · Next.js · React Native · Expo', 31, 889, 25)
+mobile += text('MMKV · Zod · Spring Boot · SpacetimeDB', 31, 927, 24)
+mobile += text('k6 · GCP · Grafana · CI/CD · Docker · Git', 31, 965, 24, MUTED)
+save('profile-mobile.svg', 600, 1000, mobile)
+print('Built desktop + mobile single-page profile artwork.')

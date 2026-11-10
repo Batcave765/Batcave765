@@ -1,6 +1,6 @@
 ---
 name: Batcave765
-description: An after-hours engineering editorial for Sriram M's GitHub profile.
+description: A single-page engineering poster for Sriram M's GitHub profile.
 colors:
   charcoal: "#151916"
   ivory: "#F3F1E8"
@@ -12,21 +12,17 @@ typography:
     fontFamily: "Space Grotesk"
     fontWeight: 600
 components:
-  hero:
+  profile:
     backgroundColor: "{colors.charcoal}"
     textColor: "{colors.ivory}"
     typography: "{typography.artwork}"
-  project-koda:
+  name-field:
     backgroundColor: "{colors.electric-lime}"
     textColor: "{colors.charcoal}"
     typography: "{typography.artwork}"
-  project-recur:
+  ribbon:
     backgroundColor: "{colors.ivory}"
     textColor: "{colors.charcoal}"
-    typography: "{typography.artwork}"
-  footer:
-    backgroundColor: "{colors.charcoal}"
-    textColor: "{colors.ivory}"
     typography: "{typography.artwork}"
   signature:
     textColor: "{colors.electric-lime}"
@@ -36,11 +32,11 @@ components:
 
 ## Overview
 
-**Creative North Star: "After-hours engineering editorial"**
+**Creative North Star: "Make it fast"**
 
 Oversized geometric lettering, warm paper, dark ink, and an electric accent give the profile an independent editorial voice. Precise repeated geometry connects the artwork to engineering without obscuring the work itself.
 
-The audience is engineering recruiters and hiring managers. Authored SVG artwork establishes identity; native GitHub Markdown carries selectable project details, experience, and contact links.
+The audience is engineering recruiters and hiring managers. The user explicitly requested a very short, single-page README and authorized one image for its content. A responsive SVG poster carries the content; native GitHub links below it provide project and contact actions. Comprehensive alt text supplies the content to screen readers.
 
 **Key Characteristics:**
 - Bold outlined lettering and generous graphic space.
@@ -50,13 +46,13 @@ The audience is engineering recruiters and hiring managers. Authored SVG artwork
 ## Colors
 
 ### Primary
-- **Electric lime:** emphasis in the hero, the Koda field, Recur's motif panel, and the closing signature.
+- **Electric lime:** name field, project titles, and engineering proof.
 
 ### Neutral
-- **Charcoal:** hero and footer fields; dark project lettering and geometry.
-- **Ivory:** primary lettering on dark artwork and Recur's main field.
-- **Muted sage:** supporting hero labels.
-- **Divider:** the quiet horizontal rule inside both hero compositions.
+- **Charcoal:** poster ground and dark lettering on the name field and ribbon.
+- **Ivory:** primary lettering on dark artwork and the diagonal ribbon.
+- **Muted sage:** supporting role, project stack, and toolkit copy.
+- **Divider:** quiet separators between information groups.
 
 The frontmatter defines artwork colors. GitHub supplies the surrounding document's colors in each reader's theme.
 
@@ -64,15 +60,15 @@ The frontmatter defines artwork colors. GitHub supplies the surrounding document
 
 **Artwork:** Space Grotesk at semibold weight (600), converted to SVG paths by `scripts/build_artwork.py`. Font files are unnecessary at render time; the font license is retained in `assets/FONT-LICENSE.txt`.
 
-The desktop name uses a large display size (152 SVG units), while the mobile name is recomposed over two lines (115 units). Project names share a display size (99 units). Supporting artwork labels range from 25 to 29 units. These are source-coordinate sizes and scale with each SVG, not fixed browser font sizes.
+Desktop name: 205 SVG units over two lines. Mobile name: 100 units on one line. Ribbon: 88 desktop / 54 mobile. Supporting copy: 22–40 desktop / 24–32 mobile. These source-coordinate sizes scale with each SVG.
 
-**Document:** GitHub determines prose, heading, link, table, and inline-code typography. Technology lists use native inline code. No custom prose font, CSS type scale, or font fallback is imposed.
+**Document:** GitHub determines native link typography and interaction. The README has no prose sections or skills table.
 
 ## Layout
 
-The README is a single flowing document. Artwork fills its available width; headings, lists, tables, native links, and a disclosure carry the body. Centered contact links sit below the hero. Explicit `<br>` elements separate major content blocks.
+The README consists of one responsive picture and one centered line of four real links. The desktop poster splits the name and professional context across the upper half. A diagonal ribbon joins them; projects and a three-line toolkit finish the composition. Mobile reflows this into a single compact column.
 
-The `<picture>` selects `hero-mobile.svg` at a maximum viewport width of 600px. Desktop and mobile hero viewBoxes are 1200 by 530 and 600 by 570 respectively. The mobile hero deliberately reflows the name and statement. Project artwork uses 1200 by 250 viewBoxes; the footer uses 1200 by 110. All images retain their intrinsic aspect ratio.
+The `<picture>` selects `profile-mobile.svg` at a maximum viewport width of 600px. Desktop and mobile viewBoxes are 1200×834 and 600×1000. At a typical desktop README width the poster occupies about 620px of height; on a 390px phone it occupies about 600px. Both retain their intrinsic aspect ratio.
 
 ## Elevation & Depth
 
@@ -80,30 +76,28 @@ Flat color fields, typographic scale, and contrast establish hierarchy. The artw
 
 ## Shapes
 
-Rectangular artwork frames contain precise, authored geometry. Three repeated ascending chevrons form the recurring signature; their mitered strokes scale with the mark. Koda uses an abstract sequence of narrow rounded bars. Recur uses three offset circular loops within a lime panel.
+Rectangular color fields and an ivory ribbon rotated -4° on desktop / -5° on mobile carry the composition. Three repeated ascending chevrons continue the existing signature. No extra project banners or icons.
 
-**The Geometry Rule.** The waveform and loops are decorative signatures, not measured data or product screenshots.
+**The Geometry Rule.** The chevrons and ribbon are graphic signatures, not measured data or product screenshots.
 
 ## Components
 
-- **Hero:** dark field, ivory identity, lime statement, muted labels, quiet divider, and chevron signature. The mobile asset is a separate composition with the same visual language.
-- **Koda banner:** lime field, dark project title and statement, abstract waveform. Its image links to the verified repository; the native heading and prose repeat the essential project identity.
-- **Recur banner:** ivory field, dark project title and statement, lime geometry panel. The native heading and prose carry the project details.
-- **Footer:** compact dark field with ivory handle, lime closing line, and repeated signature.
-- **Native content:** GitHub headings, links, lists, table, inline code, and `<details>` retain platform interaction and focus behavior. No custom button or input system exists.
+- **Profile:** one static composition, alternate desktop and mobile layouts, outlined name, role/proof, two projects, toolkit.
+- **Ribbon:** the MAKE IT FAST statement crossing the name and role fields.
+- **Native actions:** Koda, all code, LinkedIn, and email. GitHub owns hover/focus states. No fake buttons inside the image.
 
-Artwork is static. Each SVG has a title and image semantics, while README images have descriptive alternative text. Substantive claims and contact actions remain accessible as native text.
+Artwork is static. Each SVG has a title and image semantics. README alternative text supplies its factual content; contact and project actions remain native links.
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** preserve the palette, semibold outlined lettering, and repeated geometry when extending the artwork.
-- **Do** keep substantive information and navigation in native, selectable README text.
-- **Do** maintain alternative text and SVG titles, and check both hero compositions when editing identity artwork.
+- **Do** keep native links and comprehensive alternative text for this explicitly image-led profile.
+- **Do** maintain SVG titles and check both poster compositions when editing artwork.
 - **Do** regenerate authored SVGs through `scripts/build_artwork.py` so geometry and font treatment stay consistent.
 
 ### Don't:
 - **Don't** introduce custom page CSS or scripted interactions that GitHub cannot render.
 - **Don't** treat decorative geometry as evidence, analytics, or a product screenshot.
-- **Don't** replace native text with image-only claims or links.
+- **Don't** put fake interactive links inside the poster or omit its factual alternative text.
 - **Don't** substitute generated raster artwork for the authored SVG system.

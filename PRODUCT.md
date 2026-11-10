@@ -26,6 +26,8 @@ The profile must render natively on GitHub. Use accessible text, working project
 
 The user delegates the visual direction and asks for a modern, experimental, polished result.
 
+The revised brief requires a short, single-page README. One content image with responsive desktop/mobile compositions is explicitly permitted. Prioritize a concise visual introduction over reproducing the resume; retain real contact and project links below it.
+
 ## Evidence on Hand
 
 User-supplied Sriram M software engineer resume: performance engineering at Cognizant, React/Next.js internship at DevCrew, Recur, Koda, skills, education, national hackathon awards. Public GitHub profile: https://github.com/Batcave765. Public project availability to verify before linking. Employment dates are presented as stated in the supplied resume.
@@ -33,6 +35,6 @@ User-supplied Sriram M software engineer resume: performance engineering at Cogn
 ## Product Principles
 
 - Put engineering substance next to visual personality.
-- Keep the essential content selectable and readable without images.
+- Supply meaningful alternative text for the image-based composition and native project/contact links.
 - Use verified facts and avoid fabricated metrics or proficiency rankings.
 - Avoid dependence on third-party badge/stat image services.

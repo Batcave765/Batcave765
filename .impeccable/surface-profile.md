@@ -1,14 +1,10 @@
-# GitHub profile
+# Compact GitHub profile
 
-MODE: Experience, constrained to a readable GitHub document.
-FORM: After-hours engineering editorial, seed:305a7e63c8458e7e.
+MODE: Experience.
+FORM: A single-page typographic engineering poster within the existing charcoal/ivory/lime world. User explicitly rejected the long README and authorized one image for the content. Preserve its palette and outlined type; compress and intensify its composition.
 
-Audience confirmed: engineering recruiters and hiring managers. User delegated the visual direction. Document/code-first build; no interactive website or generated visual comp is required.
+One responsive picture plus four native links. Desktop 1200×834; mobile 600×1000. Target roughly 620px of artwork at desktop README width and 600px on a 390px phone. No long body, skills table, expandable sections, repeated project descriptions, or extra banners.
 
-Grounded directions considered: technical journal, independent engineering magazine, after-hours engineering editorial (assigned), audio record sleeve, mobile product specimen, systems conference program, engineering field notes. The chosen world uses charcoal, ivory, and electric lime with oversized Space Grotesk lettering outlined into SVG. Native Markdown carries all substantive claims.
+An oversized split name collides with a diagonal MAKE IT FAST ribbon. Two terse project descriptions, role/proof, and a compressed toolkit carry the information. Native Koda, repositories, LinkedIn, and email links work below the image. Alt text includes the factual content for screen-reader and image-disabled use.
 
-Challenger verdicts: sign fabrication, Breton ornament, sneaker archive, alphabet storm, and ink basin all declined on audience identification and immediate product clarity within GitHub's restricted renderer. Kept disciplines respectively: contrast commitment, repeatable geometry, consistent project labeling, typographic scale, and open space. None of their literal decoration is borrowed.
-
-Visitor path: identity and contact links; engineering focus; Koda and Recur; professional experience; comprehensive skills; education and awards; contact. No fabricated availability state, expertise scores, contribution metrics, or unverified Recur URL.
-
-Responsive: alternate mobile hero at 600px; all other SVGs fluid width. Native headings, lists, and details remain readable without the artwork. Abstract waveform is decorative and does not represent benchmark data.
+Resume evidence: workloads at 3,000 TPS and Python reporting saving 3–4 hours per release. No invented public Recur URL. Static SVG geometry; no generated pictures or external image dependencies.
