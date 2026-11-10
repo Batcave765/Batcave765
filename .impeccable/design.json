@@ -1,34 +1,38 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-10T11:12:56.255Z",
-  "title": "Design System: Batcave765 — Make it fast",
+  "generatedAt": "2026-11-10T11:23:53.735Z",
+  "title": "Design System: Ideas into software",
   "extensions": {
     "colorMeta": {
-      "charcoal": {
+      "paper": {
         "role": "neutral",
-        "displayName": "Charcoal"
+        "displayName": "Porcelain"
       },
-      "ivory": {
+      "graphite": {
         "role": "neutral",
-        "displayName": "Ivory"
+        "displayName": "Graphite"
       },
-      "electric-lime": {
+      "burnt-orange": {
         "role": "primary",
-        "displayName": "Electric lime"
+        "displayName": "Burnt orange"
       },
-      "muted-sage": {
+      "secondary": {
         "role": "neutral",
-        "displayName": "Muted sage"
+        "displayName": "Secondary graphite"
       },
-      "divider": {
+      "rule": {
         "role": "neutral",
-        "displayName": "Divider"
+        "displayName": "Quiet rule"
       }
     },
     "typographyMeta": {
-      "artwork": {
-        "displayName": "Outlined artwork lettering",
-        "purpose": "Semibold Space Grotesk converted to SVG paths; GitHub supplies body typography."
+      "display": {
+        "displayName": "Manrope 800",
+        "purpose": "Identity, hero and skill titles; outlined in SVG"
+      },
+      "body": {
+        "displayName": "Manrope 450",
+        "purpose": "Technology names and supporting text; outlined in SVG"
       }
     },
     "shadows": [],
@@ -42,40 +46,39 @@
   },
   "components": [
     {
-      "name": "Profile poster",
+      "name": "Software engineer poster",
       "kind": "custom",
-      "refersTo": "profile",
-      "description": "One static SVG at assets/profile.svg; mobile alternative assets/profile-mobile.svg. Native project/contact links below."
+      "refersTo": "poster",
+      "description": "assets/engineer.svg (1536×1024); responsive assets/engineer-mobile.svg (600×1180). Six editorial skill groups."
     },
     {
-      "name": "Diagonal ribbon",
+      "name": "Connected layers",
       "kind": "custom",
-      "refersTo": "ribbon",
-      "description": "Ivory MAKE IT FAST ribbon, -4 degrees desktop and -5 degrees mobile, with ascending chevrons."
+      "description": "Three overlapping orange rectangular frames. Flat vector geometry, not a control or data visualization."
     }
   ],
   "narrative": {
-    "northStar": "Make it fast",
-    "overview": "Single-page skills-and-tools poster. Oversized split name, diagonal ribbon, five categorized toolkit rows, and four native project/contact links. Project descriptions and employment metrics are deliberately removed.",
+    "northStar": "Ideas into software",
+    "overview": "Completely new image-first light editorial identity, explicitly authorized by the user. Software engineer first: web interfaces, mobile apps and backend systems. All testing/observability tools remain secondary.",
     "keyCharacteristics": [
-      "One responsive content image",
-      "Categorized tools with consistent label/value hierarchy",
-      "Charcoal, ivory, electric lime, and outlined Space Grotesk"
+      "Porcelain, graphite and one burnt-orange accent",
+      "Licensed Manrope lettering in three weights",
+      "Six open skill groups, no cards or project descriptions"
     ],
     "rules": [
       {
-        "name": "One-page rule",
-        "body": "Keep the README to one compact composition plus native project/contact links.",
-        "section": "layout"
+        "name": "Software engineer first",
+        "body": "Keep web/mobile/backend and building software central. No testing-first headlines or employment metrics.",
+        "section": "overview"
       }
     ],
     "dos": [
-      "Preserve comprehensive factual alt text and native actions.",
-      "Check both responsive poster assets."
+      "Keep the one-picture README compact and provide all skill names in alt text.",
+      "Keep real project/contact links below the poster."
     ],
     "donts": [
-      "Do not restore long resume sections, skills tables, or extra banners.",
-      "Do not add fake interactive controls inside the image."
+      "Do not restore the previous lime/dark/ribbon world.",
+      "Do not add fake controls, proficiency bars or invented claims."
     ]
   }
 }

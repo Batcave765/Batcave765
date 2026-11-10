@@ -1,103 +1,73 @@
 ---
-name: Batcave765
-description: A single-page engineering poster for Sriram M's GitHub profile.
+name: Ideas into software
+description: A light editorial skills poster for software engineer Sriram M.
 colors:
-  charcoal: "#151916"
-  ivory: "#F3F1E8"
-  electric-lime: "#D4FF63"
-  muted-sage: "#B8C1B5"
-  divider: "#465044"
+  paper: "#F4F5F1"
+  graphite: "#20262D"
+  burnt-orange: "#C74628"
+  secondary: "#525C60"
+  rule: "#B8BFBC"
 typography:
-  artwork:
-    fontFamily: "Space Grotesk"
-    fontWeight: 600
+  display:
+    fontFamily: "Manrope"
+    fontWeight: 800
+  heading:
+    fontFamily: "Manrope"
+    fontWeight: 650
+  body:
+    fontFamily: "Manrope"
+    fontWeight: 450
 components:
-  profile:
-    backgroundColor: "{colors.charcoal}"
-    textColor: "{colors.ivory}"
-    typography: "{typography.artwork}"
-  name-field:
-    backgroundColor: "{colors.electric-lime}"
-    textColor: "{colors.charcoal}"
-    typography: "{typography.artwork}"
-  ribbon:
-    backgroundColor: "{colors.ivory}"
-    textColor: "{colors.charcoal}"
-    typography: "{typography.artwork}"
-  signature:
-    textColor: "{colors.electric-lime}"
+  poster:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.graphite}"
+  accent-headline:
+    textColor: "{colors.burnt-orange}"
+    typography: "{typography.display}"
 ---
 
-# Design System: Batcave765
+# Design System: Ideas into software
 
 ## Overview
 
-**Creative North Star: "Make it fast"**
+A complete replacement of the previous lime/dark/ribbon world, explicitly requested by the user. Software engineering leads: web interfaces, mobile applications, and backend systems. Technologies supply substance; testing and observability are supporting tools within one of six groups.
 
-Oversized geometric lettering, warm paper, dark ink, and an electric accent give the profile an independent editorial voice. Precise repeated geometry connects the artwork to engineering without obscuring the work itself.
-
-The audience is engineering recruiters and hiring managers. The user explicitly requested a very short, single-page README and authorized one image for its content. A responsive SVG poster carries the content; native GitHub links below it provide project and contact actions. Comprehensive alt text supplies the content to screen readers.
-
-**Key Characteristics:**
-- Bold outlined lettering and generous graphic space.
-- A compact palette with sharply contrasted project treatments.
-- Static, repeatable geometry paired with readable engineering substance.
+The design follows an image-first target created with the built-in image tool, then rebuilt as precise SVG lettering and geometry. The source target, prompt and comparisons are kept in ignored review artifacts. It is a typographic poster, not a screenshot of interactive controls.
 
 ## Colors
 
-### Primary
-- **Electric lime:** name field, project titles, and engineering proof.
-
-### Neutral
-- **Charcoal:** poster ground and dark lettering on the name field and ribbon.
-- **Ivory:** primary lettering on dark artwork and the diagonal ribbon.
-- **Muted sage:** supporting role, project stack, and toolkit copy.
-- **Divider:** quiet separators between information groups.
-
-The frontmatter defines artwork colors. GitHub supplies the surrounding document's colors in each reader's theme.
+Porcelain paper supports a light, calm reading surface. Graphite carries identity and tool names. Burnt orange emphasizes the software headline and connected-layer mark, with small squares introducing skill groups. Secondary type and thin rules use the same neutral family. The poster is theme-invariant; GitHub controls the surrounding page and native link colors.
 
 ## Typography
 
-**Artwork:** Space Grotesk at semibold weight (600), converted to SVG paths by `scripts/build_artwork.py`. Font files are unnecessary at render time; the font license is retained in `assets/FONT-LICENSE.txt`.
+Manrope, licensed under the SIL Open Font License, is outlined by `scripts/build_artwork.py`. Display and group titles use weight 800; body uses 450; the mobile role uses 650. Source font files are not needed by visitors.
 
-Desktop name: 170 SVG units over two lines. Mobile name: 100 units on one line. Ribbon: 76 desktop / 54 mobile. Skill labels: 27 desktop / 29 mobile; tool text: 26 on both. These source-coordinate sizes scale with each SVG.
-
-**Document:** GitHub determines native link typography and interaction. The README has no prose sections or skills table.
+Desktop headline: 176 SVG units, with width fitting and tracking -5. Group headings: 39 units; tool copy: 29, fitted only when necessary. Mobile headline: 91 and 101 units; group headings: 30; tool copy: 27. Source-coordinate sizes scale with the SVG. Native links inherit GitHub typography.
 
 ## Layout
 
-The README consists of one responsive picture and one centered line of four real links. The desktop poster splits the name and engineering focus across the upper field. A diagonal ribbon joins them; five aligned skill/tool groups finish the composition. Desktop uses label/value columns; mobile reflows each group to a heading and two or three tool lines. Projects appear only as native links below.
+One responsive picture and four native links. Desktop: 1536×1024, matching the generated target's dimensions; identity above a large two-line headline and an offset connected-layer mark. A rule separates the hero from a three-column, two-row toolkit. Mobile: 600×1180, with compact identity and mark, a two-line headline, six vertically stacked skill groups, and a short footer. The mobile image is selected at viewport widths up to 600px.
 
-The `<picture>` selects `profile-mobile.svg` at a maximum viewport width of 600px. Desktop and mobile viewBoxes are 1200×854 and 600×1020. At a typical desktop README width the poster occupies about 635px of height; on a 390px phone it occupies about 610px. Both retain their intrinsic aspect ratio.
+The six groups are Languages, Web & interfaces, Mobile, Backend & data, Build & delivery, and Systems & audio. There are no project descriptions, employment metrics, availability badges, proficiency bars, or long prose sections.
 
 ## Elevation & Depth
 
-Flat color fields, typographic scale, and contrast establish hierarchy. The artwork has no shadows, gradients, or simulated surface elevation. GitHub owns the treatment of native document elements.
+Flat ink and paper. No shadows, gradients, texture, glass, or three-dimensional simulation. Scale, spacing and alignment establish hierarchy.
 
 ## Shapes
 
-Rectangular color fields and an ivory ribbon rotated -4° on desktop / -5° on mobile carry the composition. Three repeated ascending chevrons continue the existing signature. No extra project banners or icons.
-
-**The Geometry Rule.** The chevrons and ribbon are graphic signatures, not measured data or product screenshots.
+The connected-layer mark consists of three overlapping rectangular frames with a consistent 26-unit stroke. It suggests interface, application, and data layers. Small orange squares are editorial markers, not interactive icons. Rules separate major regions without boxing every group.
 
 ## Components
 
-- **Profile:** one static composition, alternate desktop and mobile layouts, outlined name, engineering focus, five skill/tool groups. No projects or employment metrics in the artwork.
-- **Ribbon:** the MAKE IT FAST statement crossing the name and role fields.
-- **Native actions:** Koda, all code, LinkedIn, and email. GitHub owns hover/focus states. No fake buttons inside the image.
-
-Artwork is static. Each SVG has a title and image semantics. README alternative text supplies its factual content; contact and project actions remain native links.
+- **Poster:** role, identity, software headline, connected-layer geometry, six tool groups and footer.
+- **Native links:** Koda, Projects, LinkedIn, Email; actual actions below the image. GitHub owns keyboard focus and hover behavior.
+- **Accessibility:** a factual alt description contains the complete skills inventory. SVG titles, descriptions and labeled lettering groups describe the artwork. No essential action is trapped inside the image.
 
 ## Do's and Don'ts
 
-### Do:
-- **Do** preserve the palette, semibold outlined lettering, and repeated geometry when extending the artwork.
-- **Do** keep native links and comprehensive alternative text for this explicitly image-led profile.
-- **Do** maintain SVG titles and check both poster compositions when editing artwork.
-- **Do** regenerate authored SVGs through `scripts/build_artwork.py` so geometry and font treatment stay consistent.
-
-### Don't:
-- **Don't** introduce custom page CSS or scripted interactions that GitHub cannot render.
-- **Don't** treat decorative geometry as evidence, analytics, or a product screenshot.
-- **Don't** put fake interactive links inside the poster or omit its factual alternative text.
-- **Don't** substitute generated raster artwork for the authored SVG system.
+- Do lead with software engineering and the breadth of building across web, mobile, and backend.
+- Do preserve the light field, one orange accent, and Manrope typography.
+- Do keep project links at the bottom and maintain exact, resume-grounded tool names.
+- Don't restore lime, dark poster fields, diagonal ribbons, chevrons, employment metrics, or testing-first positioning.
+- Don't put fake controls, unverified project links, proficiency ratings, or invented expertise claims inside the artwork.

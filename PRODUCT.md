@@ -30,6 +30,8 @@ The revised brief requires a short, single-page README. One content image with r
 
 The latest refinement focuses entirely on skills and tools. Project descriptions and employment metrics are removed from the poster; projects remain native links below it. Apply the explicitly requested ui-taste skill, installed with Bun.
 
+The user subsequently requested a completely new visual identity and composition using ui-taste, emphasizing software engineering over performance testing. Lead with building web interfaces, mobile apps and backend systems. Testing, observability and infrastructure are supporting knowledge areas. The old palette, typography and ribbon are explicitly superseded.
+
 ## Evidence on Hand
 
 User-supplied Sriram M software engineer resume: performance engineering at Cognizant, React/Next.js internship at DevCrew, Recur, Koda, skills, education, national hackathon awards. Public GitHub profile: https://github.com/Batcave765. Public project availability to verify before linking. Employment dates are presented as stated in the supplied resume.

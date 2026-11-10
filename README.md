@@ -1,6 +1,6 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/profile-mobile.svg">
-  <img src="assets/profile.svg" width="100%" alt="Sriram M — software engineer in Chennai. Full-stack, mobile, and performance engineering. Languages: TypeScript, Go, JavaScript, Python, Java, C, C++, SQL. Web and mobile: React, Next.js, React Native, Expo, Tailwind CSS, NativeWind, Reanimated, Radix UI. Backend and data: Gin, Spring Boot, SpacetimeDB, Drizzle ORM, MySQL, MongoDB, MMKV, Zod. Cloud and performance: GCP, k6, Grafana, Dynatrace, Elasticsearch. Build and audio: Docker, Docker Compose, GitLab CI/CD, Bun, Git, Postman, FFmpeg, Gonum.">
+  <source media="(max-width: 600px)" srcset="assets/engineer-mobile.svg">
+  <img src="assets/engineer.svg" width="100%" alt="Sriram M — software engineer in Chennai. Ideas into software: web interfaces, mobile apps, and backend systems. Languages: TypeScript, Go, JavaScript, Python, Java, C, C++, SQL. Web: React, Next.js, Tailwind CSS, Radix UI. Mobile: React Native, Expo, NativeWind, Reanimated, MMKV, Zod. Backend and data: Gin, Spring Boot, SpacetimeDB, Drizzle ORM, MySQL, MongoDB. Build and delivery: Docker, Docker Compose, GitLab CI/CD, Bun, Git, Postman. Systems and audio: GCP, Grafana, Dynatrace, Elasticsearch, k6, FFmpeg, Gonum.">
 </picture>
 
 <p align="center">
