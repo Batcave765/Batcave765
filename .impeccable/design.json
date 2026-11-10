@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T10:37:25.445904Z",
+  "title": "Design System: Batcave765",
+  "extensions": {
+    "colorMeta": {
+      "charcoal": {
+        "role": "neutral",
+        "displayName": "Charcoal"
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Ivory"
+      },
+      "electric-lime": {
+        "role": "primary",
+        "displayName": "Electric lime"
+      },
+      "muted-sage": {
+        "role": "neutral",
+        "displayName": "Muted sage"
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Divider"
+      }
+    },
+    "typographyMeta": {
+      "artwork": {
+        "displayName": "Outlined artwork lettering",
+        "purpose": "Semibold Space Grotesk converted to SVG paths; GitHub supplies body typography."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "mobile-hero-max",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ascending chevrons",
+      "kind": "custom",
+      "refersTo": "signature",
+      "description": "The three actual signature paths extracted from assets/footer.svg; also repeated in both hero assets. This preview isolates the geometry without duplicating outlined lettering.",
+      "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"647 29 52 50\" width=\"104\" height=\"100\" role=\"img\" aria-labelledby=\"ds-signature-title\"><title id=\"ds-signature-title\">Three ascending chevrons</title><path d=\"M 655.00 71.00 L 671.32 54.00 L 655.00 37.00\" fill=\"none\" stroke=\"#D4FF63\" stroke-width=\"4.08\" stroke-linejoin=\"miter\"/><path d=\"M 664.52 71.00 L 680.84 54.00 L 664.52 37.00\" fill=\"none\" stroke=\"#D4FF63\" stroke-width=\"4.08\" stroke-linejoin=\"miter\"/><path d=\"M 674.04 71.00 L 690.36 54.00 L 674.04 37.00\" fill=\"none\" stroke=\"#D4FF63\" stroke-width=\"4.08\" stroke-linejoin=\"miter\"/></svg>",
+      "css": ""
+    }
+  ],
+  "narrative": {
+    "northStar": "After-hours engineering editorial",
+    "overview": "Oversized geometric lettering, warm paper, dark ink, and an electric accent give the profile an independent editorial voice. Precise repeated geometry connects the artwork to engineering without obscuring the work itself.\n\nThe audience is engineering recruiters and hiring managers. Authored SVG artwork establishes identity; native GitHub Markdown carries selectable project details, experience, and contact links.",
+    "keyCharacteristics": [
+      "Bold outlined lettering and generous graphic space.",
+      "A compact palette with sharply contrasted project treatments.",
+      "Static, repeatable geometry paired with readable engineering substance."
+    ],
+    "rules": [
+      {
+        "name": "The Geometry Rule",
+        "body": "The waveform and loops are decorative signatures, not measured data or product screenshots.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do preserve the palette, semibold outlined lettering, and repeated geometry when extending the artwork.",
+      "Do keep substantive information and navigation in native, selectable README text.",
+      "Do maintain alternative text and SVG titles, and check both hero compositions when editing identity artwork.",
+      "Do regenerate authored SVGs through `scripts/build_artwork.py` so geometry and font treatment stay consistent."
+    ],
+    "donts": [
+      "Don't introduce custom page CSS or scripted interactions that GitHub cannot render.",
+      "Don't treat decorative geometry as evidence, analytics, or a product screenshot.",
+      "Don't replace native text with image-only claims or links.",
+      "Don't substitute generated raster artwork for the authored SVG system."
+    ]
+  }
+}
