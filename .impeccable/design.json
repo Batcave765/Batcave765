@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-10T10:54:42.216Z",
+  "generatedAt": "2026-11-10T11:12:56.255Z",
   "title": "Design System: Batcave765 — Make it fast",
   "extensions": {
     "colorMeta": {
@@ -56,11 +56,11 @@
   ],
   "narrative": {
     "northStar": "Make it fast",
-    "overview": "Single-page engineering poster. The user explicitly chose a compact image-led README. Oversized split name, diagonal ribbon, engineering proof, two projects, compressed toolkit and four native links.",
+    "overview": "Single-page skills-and-tools poster. Oversized split name, diagonal ribbon, five categorized toolkit rows, and four native project/contact links. Project descriptions and employment metrics are deliberately removed.",
     "keyCharacteristics": [
       "One responsive content image",
-      "Oversized type colliding with a diagonal ribbon",
-      "Charcoal, ivory and electric lime"
+      "Categorized tools with consistent label/value hierarchy",
+      "Charcoal, ivory, electric lime, and outlined Space Grotesk"
     ],
     "rules": [
       {

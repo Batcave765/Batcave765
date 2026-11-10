@@ -46,52 +46,51 @@ def ribbon(y, width, height, angle, label, size):
 
 
 def save(name, w, h, body):
-    title = 'Sriram M. Make it fast. Performance engineering, full-stack and local-first apps.'
+    title = 'Sriram M. Make it fast. Languages, web and mobile, backend and data, cloud and performance, build and audio.'
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title"><title id="title">{escape(title)}</title><rect width="{w}" height="{h}" fill="{INK}"/>{body}</svg>\n'
     (ROOT / 'assets' / name).write_text(svg, encoding='utf-8')
 
 
-desktop = '<rect width="555" height="422" fill="#D4FF63"/>'
-desktop += text('SRI', 35, 174, 205, INK, -6)
-desktop += text('RAM.', 35, 349, 205, INK, -6)
-desktop += text('Software engineer.', 610, 88, 40)
-desktop += text('Chennai, India / Batcave765', 613, 129, 23, MUTED)
-desktop += text('Performance + automation', 613, 208, 30)
-desktop += text('Cognizant / Macy\'s supply chain', 613, 246, 23, MUTED)
-desktop += text('3,000 TPS workloads.', 613, 303, 27, LIME)
-desktop += text('3–4h saved per release.', 613, 342, 27, LIME)
-desktop += ribbon(423, 1200, 112, -4, 'MAKE IT FAST.', 88)
-desktop += text('Koda', 49, 561, 52, LIME, -1)
-desktop += text('Audio → BPM + musical key.', 51, 601, 25)
-desktop += text('Go / Next.js / FFmpeg', 51, 635, 22, MUTED)
-desktop += '<path d="M580 518V651" stroke="#465044"/>'
-desktop += text('Recur', 625, 561, 52, LIME, -1)
-desktop += text('Subscriptions. Local-first. Instant.', 627, 601, 25)
-desktop += text('React Native / Expo / MMKV', 627, 635, 22, MUTED)
-desktop += '<path d="M50 682H1150" stroke="#465044"/>'
-desktop += text('TypeScript · Go · Python · Java · SQL · React · Next.js · React Native · Expo', 51, 724, 23)
-desktop += text('Tailwind · MMKV · Zod · Spring Boot · SpacetimeDB · Drizzle · MySQL · MongoDB', 51, 760, 23)
-desktop += text('k6 · GCP · Grafana · Dynatrace · GitLab CI/CD · Docker · Bun · Git · FFmpeg', 51, 796, 23, MUTED)
-save('profile.svg', 1200, 834, desktop)
+desktop = '<rect width="555" height="329" fill="#D4FF63"/>'
+desktop += text('SRI', 35, 139, 170, INK, -4)
+desktop += text('RAM.', 35, 282, 170, INK, -4)
+desktop += text('Software engineer.', 610, 92, 40)
+desktop += text('Chennai, India / Batcave765', 613, 136, 24, MUTED)
+desktop += text('Full-stack. Mobile.', 613, 211, 34)
+desktop += text('Performance.', 613, 254, 34, LIME)
+desktop += ribbon(329, 1200, 91, -4, 'MAKE IT FAST.', 76)
+
+rows = [
+    ('Languages', ['TypeScript · Go · JavaScript · Python · Java · C · C++ · SQL']),
+    ('Web + mobile', ['React · Next.js · React Native · Expo · Tailwind CSS', 'NativeWind · Reanimated · Radix UI']),
+    ('Backend + data', ['Gin · Spring Boot · SpacetimeDB · Drizzle ORM', 'MySQL · MongoDB · MMKV · Zod']),
+    ('Cloud + perf', ['GCP · k6 · Grafana · Dynatrace · Elasticsearch']),
+    ('Build + audio', ['Docker · Compose · GitLab CI/CD · Bun · Git', 'Postman · FFmpeg · Gonum']),
+]
+for y, (label, lines) in zip([455, 529, 621, 713, 787], rows):
+    desktop += text(label, 49, y, 27, LIME)
+    for i, line in enumerate(lines):
+        desktop += text(line, 296, y + i * 35, 26)
+    if y != 787:
+        desktop += f'<path d="M50 {y + (len(lines)-1)*35+25}H1150" stroke="#465044"/>'
+save('profile.svg', 1200, 854, desktop)
 
 mobile = '<rect width="600" height="219" fill="#D4FF63"/>'
 mobile += text('SRIRAM M.', 26, 107, 100, INK, -3)
 mobile += text('Software engineer / Chennai', 30, 160, 29, INK)
 mobile += ribbon(237, 600, 82, -5, 'MAKE IT FAST.', 54)
-mobile += text('Performance + automation', 30, 344, 32)
-mobile += text('Cognizant / Macy\'s supply chain', 31, 386, 26, MUTED)
-mobile += text('3,000 TPS workloads.', 31, 438, 28, LIME)
-mobile += text('3–4h saved per release.', 31, 478, 28, LIME)
-mobile += '<path d="M30 512H570" stroke="#465044"/>'
-mobile += text('Koda', 28, 574, 48, LIME)
-mobile += text('Audio → BPM + key. Go / Next.js.', 31, 615, 27)
-mobile += text('Recur', 28, 692, 48, LIME)
-mobile += text('Local-first subscriptions.', 31, 733, 27)
-mobile += text('React Native / Expo / MMKV', 31, 771, 26, MUTED)
-mobile += '<path d="M30 809H570" stroke="#465044"/>'
-mobile += text('TypeScript · Go · Python · Java · SQL', 31, 851, 25)
-mobile += text('React · Next.js · React Native · Expo', 31, 889, 25)
-mobile += text('MMKV · Zod · Spring Boot · SpacetimeDB', 31, 927, 24)
-mobile += text('k6 · GCP · Grafana · CI/CD · Docker · Git', 31, 965, 24, MUTED)
-save('profile-mobile.svg', 600, 1000, mobile)
+mobile_rows = [
+    (330, 'Languages', ['TypeScript · Go · JavaScript · Python', 'Java · C · C++ · SQL']),
+    (461, 'Web + mobile', ['React · Next.js · React Native · Expo', 'Tailwind CSS · NativeWind', 'Reanimated · Radix UI']),
+    (625, 'Backend + data', ['Gin · Spring Boot · SpacetimeDB', 'Drizzle ORM · MySQL · MongoDB', 'MMKV · Zod']),
+    (789, 'Cloud + performance', ['GCP · k6 · Grafana · Dynatrace', 'Elasticsearch']),
+    (920, 'Build + audio', ['Docker · Compose · GitLab CI/CD · Bun', 'Git · Postman · FFmpeg · Gonum']),
+]
+for y, label, lines in mobile_rows:
+    mobile += text(label, 30, y, 29, LIME)
+    for i, line in enumerate(lines):
+        mobile += text(line, 31, y + 40 + i*34, 26)
+    if y != 920:
+        mobile += f'<path d="M30 {y+40+(len(lines)-1)*34+23}H570" stroke="#465044"/>'
+save('profile-mobile.svg', 600, 1020, mobile)
 print('Built desktop + mobile single-page profile artwork.')

@@ -60,15 +60,15 @@ The frontmatter defines artwork colors. GitHub supplies the surrounding document
 
 **Artwork:** Space Grotesk at semibold weight (600), converted to SVG paths by `scripts/build_artwork.py`. Font files are unnecessary at render time; the font license is retained in `assets/FONT-LICENSE.txt`.
 
-Desktop name: 205 SVG units over two lines. Mobile name: 100 units on one line. Ribbon: 88 desktop / 54 mobile. Supporting copy: 22–40 desktop / 24–32 mobile. These source-coordinate sizes scale with each SVG.
+Desktop name: 170 SVG units over two lines. Mobile name: 100 units on one line. Ribbon: 76 desktop / 54 mobile. Skill labels: 27 desktop / 29 mobile; tool text: 26 on both. These source-coordinate sizes scale with each SVG.
 
 **Document:** GitHub determines native link typography and interaction. The README has no prose sections or skills table.
 
 ## Layout
 
-The README consists of one responsive picture and one centered line of four real links. The desktop poster splits the name and professional context across the upper half. A diagonal ribbon joins them; projects and a three-line toolkit finish the composition. Mobile reflows this into a single compact column.
+The README consists of one responsive picture and one centered line of four real links. The desktop poster splits the name and engineering focus across the upper field. A diagonal ribbon joins them; five aligned skill/tool groups finish the composition. Desktop uses label/value columns; mobile reflows each group to a heading and two or three tool lines. Projects appear only as native links below.
 
-The `<picture>` selects `profile-mobile.svg` at a maximum viewport width of 600px. Desktop and mobile viewBoxes are 1200×834 and 600×1000. At a typical desktop README width the poster occupies about 620px of height; on a 390px phone it occupies about 600px. Both retain their intrinsic aspect ratio.
+The `<picture>` selects `profile-mobile.svg` at a maximum viewport width of 600px. Desktop and mobile viewBoxes are 1200×854 and 600×1020. At a typical desktop README width the poster occupies about 635px of height; on a 390px phone it occupies about 610px. Both retain their intrinsic aspect ratio.
 
 ## Elevation & Depth
 
@@ -82,7 +82,7 @@ Rectangular color fields and an ivory ribbon rotated -4° on desktop / -5° on m
 
 ## Components
 
-- **Profile:** one static composition, alternate desktop and mobile layouts, outlined name, role/proof, two projects, toolkit.
+- **Profile:** one static composition, alternate desktop and mobile layouts, outlined name, engineering focus, five skill/tool groups. No projects or employment metrics in the artwork.
 - **Ribbon:** the MAKE IT FAST statement crossing the name and role fields.
 - **Native actions:** Koda, all code, LinkedIn, and email. GitHub owns hover/focus states. No fake buttons inside the image.
 
